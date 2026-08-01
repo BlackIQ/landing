@@ -7,178 +7,179 @@ import {
 
 const accent = "#10B981";
 
-const roadmap = [
+const benchmarks = [
+  { name: "Supabase Status", url: "status.supabase.com" },
+  { name: "Vercel Status", url: "www.vercel-status.com" },
+  { name: "Cloudflare Status", url: "www.cloudflarestatus.com" },
+];
+
+const features = [
   {
-    label: "Phase 1",
-    items: ["Website monitoring", "API monitoring", "SSL monitoring"],
+    title: "Custom Domain Status Pages",
+    description:
+      "Host public status pages directly at status.yourcompany.com or via uptime.openhubble.com/yourcompany.",
   },
   {
-    label: "Phase 2",
-    items: [
-      "Incident management",
-      "Public status pages",
-      "Maintenance windows",
-    ],
+    title: "HTTP & API Endpoint Checks",
+    description:
+      "Continuous pinging, latency tracking, and status code verification for web applications and microservices.",
   },
   {
-    label: "Phase 3",
-    items: ["Alerting", "Custom domains", "Advanced routing"],
+    title: "Incident Management",
+    description:
+      "Communicate ongoing incidents, scheduled maintenance windows, and resolution updates to your users.",
+  },
+  {
+    title: "SSL & DNS Tracking",
+    description:
+      "Proactive alerts for expiring SSL certificates, DNS changes, and domain health.",
   },
 ];
 
 export const metadata: Metadata = {
-  title: "OpenHubble Uptime",
+  title: "OpenHubble Uptime | Status Pages & Monitoring",
   description:
-    "OpenHubble Uptime is a future product for website, API, and incident monitoring.",
+    "OpenHubble Uptime launches Oct 1, 2026. Custom status pages for websites, APIs, and incidents.",
 };
 
 export default function UptimePage() {
   return (
     <ProductPageShell accent={accent}>
-      <section className="mx-auto max-w-6xl px-6 py-10 lg:px-8 lg:py-12">
-        <div className="mb-8 flex items-center gap-2 text-sm text-slate-500">
-          <Link href="/" className="transition hover:text-slate-800">
-            OpenHubble
-          </Link>
-          <span>/</span>
-          <Link href="/products" className="transition hover:text-slate-800">
-            Products
-          </Link>
-          <span>/</span>
-          <span className="font-medium text-slate-700">Uptime</span>
-        </div>
-        <div className="grid gap-8 rounded-[32px] border border-slate-200 bg-white p-8 shadow-[0_16px_40px_rgba(15,23,42,0.04)] lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:p-10">
-          <div>
-            <p
-              className="mb-4 text-sm font-semibold uppercase tracking-[0.24em]"
-              style={{ color: accent }}
-            >
-              Coming Soon
-            </p>
-            <h1 className="mb-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-              Reliable uptime monitoring for websites, APIs, and services.
-            </h1>
-            <p className="mb-4 text-xl font-medium" style={{ color: accent }}>
-              A focused experience for status visibility, incident awareness,
-              and service reliability.
-            </p>
-            <p className="max-w-2xl text-lg leading-8 text-slate-600">
-              OpenHubble Uptime will provide website monitoring, API monitoring,
-              SSL monitoring, incident management, public status pages,
-              maintenance windows, alerting, and custom domains.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="#roadmap"
-                className="rounded-full px-6 py-3 text-center font-medium text-white transition hover:opacity-90"
-                style={{ backgroundColor: accent }}
-              >
-                View Roadmap
-              </Link>
-              <Link
-                href="/products/metrics"
-                className="rounded-full border border-slate-300 px-6 py-3 text-center font-medium text-slate-700 transition hover:bg-white"
-              >
-                Explore Metrics
-              </Link>
-            </div>
+      {/* Breadcrumb Navigation */}
+      <div className="mb-8 flex items-center gap-2 text-sm text-slate-500">
+        <Link href="/" className="transition hover:text-black">
+          OpenHubble
+        </Link>
+        <span>/</span>
+        <span className="text-slate-400">Products</span>
+        <span>/</span>
+        <span className="font-semibold text-black">Uptime</span>
+      </div>
+
+      {/* Hero Section */}
+      <section className="py-8 lg:py-16">
+        <div className="max-w-3xl">
+          <div className="mb-6 flex flex-wrap gap-2">
+            <span className="rounded-full bg-emerald-100 px-3.5 py-1 text-xs font-bold text-emerald-900 border border-emerald-200">
+              Launching October 1, 2026
+            </span>
+            <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-800 shadow-sm">
+              Status Pages
+            </span>
+            <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-800 shadow-sm">
+              Global Probes
+            </span>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
-              Monitoring
-            </p>
-            <div className="mt-5 space-y-5">
-              {[
-                {
-                  title: "HTTPS",
-                  detail: "Site and endpoint availability checks.",
-                },
-                {
-                  title: "SSL",
-                  detail: "Certificate health and expiry conditions.",
-                },
-                {
-                  title: "API",
-                  detail: "API response, latency, and status behavior.",
-                },
-                {
-                  title: "DNS",
-                  detail: "Lookup health and record consistency.",
-                },
-                {
-                  title: "Status Page",
-                  detail: "Public communication for incidents and maintenance.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="border-b border-slate-200 pb-4 last:border-b-0 last:pb-0"
-                >
-                  <h2 className="text-lg font-semibold text-slate-900">
-                    {item.title}
-                  </h2>
-                  <p className="mt-1 text-sm leading-7 text-slate-600">
-                    {item.detail}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-black sm:text-5xl lg:text-6xl">
+            Reliable status pages and service uptime tracking.
+          </h1>
+
+          <p className="mb-6 text-xl font-semibold" style={{ color: accent }}>
+            Build transparent, high-trust status pages for your users and
+            customer base.
+          </p>
+
+          <p className="max-w-2xl text-lg leading-8 text-slate-600">
+            OpenHubble Uptime helps engineering teams monitor APIs, websites,
+            and infrastructure while providing seamless public status
+            communication—just like top developer tools.
+          </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 items-start">
+            <a
+              href="#features"
+              className="rounded-full px-8 py-3.5 text-center font-semibold text-white shadow-sm transition hover:opacity-90"
+              style={{ backgroundColor: accent }}
+            >
+              Explore Capabilities
+            </a>
+            <Link
+              href="/products/metrics"
+              className="rounded-full border border-slate-200 bg-white px-8 py-3.5 text-center font-semibold text-slate-900 transition hover:border-black hover:bg-slate-50 shadow-sm"
+            >
+              Explore Metrics
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8 lg:py-20">
+      {/* Inspiration & Benchmarks */}
+      <section className="py-12 lg:py-16">
         <ProductSectionHeading
           accent={accent}
-          eyebrow="Planned Coverage"
-          title="A focused uptime experience for teams"
-          description="The product will center on reliability, incident visibility, and clear communication."
+          eyebrow="Industry Benchmarks"
+          title="The gold standard of status communication"
+          description="Designed to offer the level of clarity, responsiveness, and trust delivered by industry leaders."
         />
-        <div className="grid gap-4 md:grid-cols-2">
-          {[
-            "Website monitoring",
-            "API monitoring",
-            "SSL monitoring",
-            "Incident management",
-            "Public status pages",
-            "Maintenance windows",
-            "Alerting",
-            "Custom domains",
-          ].map((item) => (
-            <div
-              key={item}
-              className="rounded-3xl border border-slate-200 bg-white p-6 text-sm text-slate-700"
-            >
-              {item}
-            </div>
-          ))}
-        </div>
-      </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8 lg:py-20">
-        <ProductSectionHeading
-          accent={accent}
-          eyebrow="Roadmap"
-          title="A steady path to launch"
-          description="The rollout will expand in phases so the experience remains consistent and practical."
-        />
-        <div className="grid gap-4 md:grid-cols-3">
-          {roadmap.map((group) => (
+        <div className="grid gap-4 sm:grid-cols-3">
+          {benchmarks.map((item) => (
             <div
-              key={group.label}
-              className="rounded-3xl border border-slate-200 bg-white p-6"
+              key={item.name}
+              className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:border-emerald-200 hover:shadow-md"
             >
-              <h3 className="mb-4 text-lg font-semibold text-slate-900">
-                {group.label}
+              <h3 className="text-base font-bold text-slate-900">
+                {item.name}
               </h3>
-              <ul className="space-y-2 text-sm text-slate-600">
-                {group.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              <p className="mt-1 text-xs font-mono text-slate-500">
+                {item.url}
+              </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Core Features */}
+      <section id="features" className="py-12 lg:py-16">
+        <ProductSectionHeading
+          accent={accent}
+          eyebrow="Core Features"
+          title="Everything needed for service transparency"
+          description="Built to keep your customers informed during incidents and maintenance."
+        />
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {features.map((feature) => (
+            <div
+              key={feature.title}
+              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-emerald-200 hover:shadow-md"
+            >
+              <div
+                className="mb-3 h-2 w-2 rounded-full"
+                style={{ backgroundColor: accent }}
+              />
+              <h3 className="mb-2 text-lg font-bold text-slate-900">
+                {feature.title}
+              </h3>
+              <p className="text-sm leading-6 text-slate-600">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* High-Trust Custom Domain Banner */}
+      <section className="py-12 lg:py-16">
+        <div className="rounded-3xl bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 p-8 sm:p-12 text-white shadow-xl">
+          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-emerald-300">
+            Built for Transparency
+          </p>
+          <h3 className="mb-4 text-3xl font-bold">
+            Your brand, your status domain.
+          </h3>
+          <p className="max-w-2xl text-emerald-100/80 text-sm leading-6">
+            Publish your live status board on your own domain at{" "}
+            <code className="text-emerald-300 font-mono bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/50">
+              status.yourcompany.com
+            </code>{" "}
+            or share direct hosted links via{" "}
+            <code className="text-emerald-300 font-mono bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/50">
+              uptime.openhubble.com/yourcompany
+            </code>{" "}
+            with automatic SSL provisioning.
+          </p>
         </div>
       </section>
     </ProductPageShell>
