@@ -45,7 +45,6 @@ export const metadata: Metadata = {
 export default function UptimePage() {
   return (
     <ProductPageShell accent={accent}>
-      {/* Breadcrumb Navigation */}
       <div className="mb-8 flex items-center gap-2 text-sm text-slate-500">
         <Link href="/" className="transition hover:text-black">
           OpenHubble
@@ -56,7 +55,6 @@ export default function UptimePage() {
         <span className="font-semibold text-black">Uptime</span>
       </div>
 
-      {/* Hero Section */}
       <section className="py-8 lg:py-16">
         <div className="max-w-3xl">
           <div className="mb-6 flex flex-wrap gap-2">
@@ -101,7 +99,6 @@ export default function UptimePage() {
         </div>
       </section>
 
-      {/* Inspiration & Benchmarks */}
       <section className="py-12 lg:py-16">
         <ProductSectionHeading
           accent={accent}
@@ -127,7 +124,6 @@ export default function UptimePage() {
         </div>
       </section>
 
-      {/* Core Features */}
       <section id="features" className="py-12 lg:py-16">
         <ProductSectionHeading
           accent={accent}
@@ -157,7 +153,6 @@ export default function UptimePage() {
         </div>
       </section>
 
-      {/* High-Trust Custom Domain Banner */}
       <section className="py-12 lg:py-16">
         <div className="rounded-3xl bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 p-8 sm:p-12 text-white shadow-xl">
           <p className="mb-2 text-xs font-bold uppercase tracking-widest text-emerald-300">

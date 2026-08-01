@@ -83,7 +83,6 @@ export const metadata: Metadata = {
 export default function MetricsPage() {
   return (
     <ProductPageShell accent={accent}>
-      {/* Breadcrumb Navigation */}
       <div className="mb-8 flex items-center gap-2 text-sm text-slate-500">
         <Link href="/" className="transition hover:text-black">
           OpenHubble
@@ -94,7 +93,6 @@ export default function MetricsPage() {
         <span className="font-semibold text-black">Metrics</span>
       </div>
 
-      {/* Hero Section */}
       <section className="py-8 lg:py-16">
         <div className="max-w-3xl">
           <div className="mb-6 flex flex-wrap gap-2">
@@ -147,7 +145,6 @@ export default function MetricsPage() {
         </div>
       </section>
 
-      {/* Workflow Section */}
       <section className="py-12 lg:py-16">
         <ProductSectionHeading
           accent={accent}
@@ -179,7 +176,6 @@ export default function MetricsPage() {
         </div>
       </section>
 
-      {/* Quick Agent Install */}
       <section id="installation" className="py-12 lg:py-16">
         <ProductSectionHeading
           accent={accent}
@@ -200,7 +196,6 @@ export default function MetricsPage() {
         </div>
       </section>
 
-      {/* Technology Stack */}
       <section className="py-12 lg:py-16">
         <ProductSectionHeading
           accent={accent}
@@ -233,7 +228,6 @@ export default function MetricsPage() {
         </div>
       </section>
 
-      {/* Open Source Repositories */}
       <section className="py-12 lg:py-16">
         <ProductSectionHeading
           accent={accent}
@@ -256,9 +250,6 @@ export default function MetricsPage() {
                   <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">
                     {repo.title}
                   </h3>
-                  <span className="text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
-                    ↗
-                  </span>
                 </div>
                 <p className="text-sm leading-6 text-slate-600">
                   {repo.description}
@@ -272,7 +263,6 @@ export default function MetricsPage() {
         </div>
       </section>
 
-      {/* Data Integrity Banner */}
       <section className="py-12 lg:py-16">
         <div className="rounded-3xl bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 p-8 sm:p-12 text-white shadow-xl">
           <p className="mb-2 text-xs font-bold uppercase tracking-widest text-blue-300">

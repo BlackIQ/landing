@@ -69,7 +69,6 @@ export const metadata: Metadata = {
 export default function AnalyticsPage() {
   return (
     <ProductPageShell accent={accent}>
-      {/* Breadcrumb Navigation */}
       <div className="mb-8 flex items-center gap-2 text-sm text-slate-500">
         <Link href="/" className="transition hover:text-black">
           OpenHubble
@@ -80,7 +79,6 @@ export default function AnalyticsPage() {
         <span className="font-semibold text-black">Analytics</span>
       </div>
 
-      {/* Hero Section */}
       <section className="py-8 lg:py-16">
         <div className="max-w-3xl">
           <div className="mb-6 flex flex-wrap gap-2">
@@ -125,7 +123,6 @@ export default function AnalyticsPage() {
         </div>
       </section>
 
-      {/* Core Features Section */}
       <section id="features" className="py-12 lg:py-16">
         <ProductSectionHeading
           accent={accent}
@@ -155,7 +152,6 @@ export default function AnalyticsPage() {
         </div>
       </section>
 
-      {/* SDK Integration Code Preview */}
       <section className="py-12 lg:py-16">
         <ProductSectionHeading
           accent={accent}
@@ -185,7 +181,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Privacy Commitment Banner */}
       <section className="py-12 lg:py-16">
         <div className="rounded-3xl bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 p-8 sm:p-12 text-white shadow-xl">
           <p className="mb-2 text-xs font-bold uppercase tracking-widest text-purple-300">
