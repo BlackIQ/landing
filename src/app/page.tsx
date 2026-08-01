@@ -64,7 +64,7 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-8 max-w-2xl">
-      <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-black">
+      <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-slate-900">
         {eyebrow}
       </p>
       <h3 className="mb-3 text-3xl font-bold text-slate-900 sm:text-4xl">
@@ -77,51 +77,63 @@ function SectionHeading({
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+    <div
+      className="min-h-screen text-slate-900"
+      style={{
+        background: `radial-gradient(circle at top, rgba(15, 23, 42, 0.08) 0%, #F8FAFC 50%)`,
+      }}
+    >
+      {/* Sticky Header Navbar */}
+      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-black font-semibold text-white">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 font-black text-white shadow-sm transition group-hover:scale-105">
               O
             </div>
-            <span className="text-lg font-bold tracking-tight text-black">
+            <span className="text-lg font-bold tracking-tight text-slate-900">
               OpenHubble
             </span>
           </Link>
 
-          <nav className="flex items-center gap-6 text-sm font-medium text-slate-700">
-            <details className="group relative">
-              <summary className="flex cursor-pointer list-none items-center gap-1 rounded-full border border-slate-300 px-4 py-1.5 transition hover:border-black hover:text-black">
+          <nav className="flex items-center gap-6 text-sm font-semibold text-slate-600">
+            {/* Products Dropdown */}
+            <div className="relative group">
+              <button className="flex items-center gap-1.5 py-1 text-slate-700 transition hover:text-black">
                 Products
-                <span className="text-xs text-slate-400 group-open:rotate-180 transition-transform">
-                  ▾
-                </span>
-              </summary>
-              <div className="absolute right-0 top-full mt-2 w-44 rounded-xl border border-slate-200 bg-white p-2 shadow-xl">
-                <Link
-                  href="/products/metrics"
-                  className="flex items-center gap-2 rounded-lg px-3 py-2 text-slate-700 transition hover:bg-slate-100 hover:text-black"
+                <svg
+                  className="h-4 w-4 transition-transform group-hover:rotate-180"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
                 >
-                  <span className="h-2 w-2 rounded-full bg-[#3B82F6]" />
-                  Metrics
-                </Link>
-                <Link
-                  href="/products/uptime"
-                  className="flex items-center gap-2 rounded-lg px-3 py-2 text-slate-700 transition hover:bg-slate-100 hover:text-black"
-                >
-                  <span className="h-2 w-2 rounded-full bg-[#10B981]" />
-                  Uptime
-                </Link>
-                <Link
-                  href="/products/analytics"
-                  className="flex items-center gap-2 rounded-lg px-3 py-2 text-slate-700 transition hover:bg-slate-100 hover:text-black"
-                >
-                  <span className="h-2 w-2 rounded-full bg-[#8B5CF6]" />
-                  Analytics
-                </Link>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <div className="absolute right-0 top-full pt-2 hidden group-hover:block w-48">
+                <div className="rounded-2xl border border-slate-200/90 bg-white p-2 shadow-xl backdrop-blur-lg">
+                  {products.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-black"
+                    >
+                      <span>{item.name}</span>
+                      <span
+                        className="h-2 w-2 rounded-full"
+                        style={{ backgroundColor: item.accent }}
+                      />
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </details>
+            </div>
+
             <Link href="#opensource" className="transition hover:text-black">
               Open Source
             </Link>
@@ -129,16 +141,16 @@ export default function Home() {
               href="https://github.com/OpenHubble"
               target="_blank"
               rel="noreferrer"
-              className="transition hover:text-black"
+              className="flex items-center gap-1 text-slate-700 transition hover:text-black"
             >
-              GitHub
+              GitHub ↗
             </a>
             <Link href="#roadmap" className="transition hover:text-black">
               Roadmap
             </Link>
             <Link
               href="#contact"
-              className="rounded-full bg-black px-4 py-2 font-medium text-white transition hover:bg-slate-800"
+              className="rounded-full bg-slate-900 px-4 py-2 font-medium text-white transition hover:bg-slate-800"
             >
               Contact
             </Link>
@@ -161,7 +173,7 @@ export default function Home() {
                 Developer Friendly
               </span>
             </div>
-            <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-black sm:text-6xl">
+            <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
               OpenHubble
             </h1>
             <p className="mb-6 text-xl font-semibold text-slate-700">
@@ -176,7 +188,7 @@ export default function Home() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="#products"
-                className="rounded-full bg-black px-8 py-3.5 text-center font-semibold text-white transition hover:bg-slate-800"
+                className="rounded-full bg-slate-900 px-8 py-3.5 text-center font-semibold text-white shadow-sm transition hover:bg-slate-800"
               >
                 Get Started
               </Link>
@@ -308,7 +320,7 @@ export default function Home() {
                   href="https://amirhossein.info"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                  className="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
                 >
                   Website
                 </a>
@@ -338,7 +350,7 @@ export default function Home() {
                 key={feature.title}
                 className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
               >
-                <div className="mb-3 h-2 w-2 rounded-full bg-black" />
+                <div className="mb-3 h-2 w-2 rounded-full bg-slate-900" />
                 <h3 className="mb-2 text-lg font-bold text-slate-900">
                   {feature.title}
                 </h3>
@@ -355,7 +367,7 @@ export default function Home() {
           id="opensource"
           className="mx-auto max-w-6xl px-6 py-16 lg:px-8"
         >
-          <div className="rounded-3xl bg-black p-8 sm:p-12 text-white">
+          <div className="rounded-3xl bg-slate-900 p-8 sm:p-12 text-white shadow-xl">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div>
                 <p className="mb-2 text-xs font-bold uppercase tracking-widest text-slate-400">
@@ -373,7 +385,7 @@ export default function Home() {
                 href="https://github.com/OpenHubble"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full bg-white px-8 py-3.5 text-center font-bold text-black transition hover:bg-slate-200"
+                className="rounded-full bg-white px-8 py-3.5 text-center font-bold text-slate-900 transition hover:bg-slate-200"
               >
                 Explore GitHub
               </a>
@@ -412,11 +424,11 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer id="contact" className="border-t border-slate-200 bg-white">
+      <footer id="contact" className="mt-20 border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12 lg:flex-row lg:justify-between lg:px-8">
           <div>
-            <h4 className="text-xl font-bold text-black">OpenHubble</h4>
-            <p className="mt-2 text-sm text-slate-500">
+            <h4 className="text-lg font-bold text-slate-900">OpenHubble</h4>
+            <p className="mt-1 text-sm text-slate-500">
               Exploring Data, Unveiling Insights.
             </p>
             <p className="mt-4 text-xs font-semibold text-slate-400">
@@ -425,21 +437,32 @@ export default function Home() {
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             <div>
-              <h5 className="mb-3 font-bold text-black text-sm">Products</h5>
+              <h5 className="mb-3 font-bold text-slate-900 text-sm">
+                Products
+              </h5>
               <div className="flex flex-col gap-2 text-sm text-slate-600">
-                <Link href="/products/metrics" className="hover:text-black">
+                <Link
+                  href="/products/metrics"
+                  className="font-medium hover:text-slate-900 transition"
+                >
                   Metrics
                 </Link>
-                <Link href="/products/uptime" className="hover:text-black">
+                <Link
+                  href="/products/uptime"
+                  className="font-medium hover:text-slate-900 transition"
+                >
                   Uptime
                 </Link>
-                <Link href="/products/analytics" className="hover:text-black">
+                <Link
+                  href="/products/analytics"
+                  className="font-medium hover:text-slate-900 transition"
+                >
                   Analytics
                 </Link>
               </div>
             </div>
             <div>
-              <h5 className="mb-3 font-bold text-black text-sm">
+              <h5 className="mb-3 font-bold text-slate-900 text-sm">
                 Social Media
               </h5>
               <div className="flex flex-col gap-2 text-sm text-slate-600">
@@ -447,17 +470,17 @@ export default function Home() {
                   href="https://github.com/OpenHubble"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-black"
+                  className="hover:text-slate-900 transition"
                 >
                   GitHub
                 </a>
               </div>
             </div>
             <div>
-              <h5 className="mb-3 font-bold text-black text-sm">Contact</h5>
+              <h5 className="mb-3 font-bold text-slate-900 text-sm">Contact</h5>
               <a
                 href="mailto:info@openhubble.com"
-                className="text-sm text-slate-600 transition hover:text-black"
+                className="text-sm text-slate-600 transition hover:text-slate-900"
               >
                 info@openhubble.com
               </a>
