@@ -3,7 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "OpenHubble | Observability Platform",
-  description: "OpenHubble is an open-source observability platform for metrics, uptime, and analytics.",
+  description:
+    "OpenHubble is an open-source observability platform for metrics, uptime, and analytics.",
 };
 
 export default function RootLayout({
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900">
+        {children}
+      </body>
     </html>
   );
 }
