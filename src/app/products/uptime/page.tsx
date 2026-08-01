@@ -94,12 +94,9 @@ export default function UptimePage() {
             >
               Explore Capabilities
             </a>
-            <Link
-              href="/products/metrics"
-              className="rounded-full border border-slate-200 bg-white px-8 py-3.5 text-center font-semibold text-slate-900 transition hover:border-black hover:bg-slate-50 shadow-sm"
-            >
-              Explore Metrics
-            </Link>
+            <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-6 py-3.5 text-sm font-semibold text-slate-500 cursor-not-allowed">
+              Console Available Oct 1, 2026
+            </span>
           </div>
         </div>
       </section>
