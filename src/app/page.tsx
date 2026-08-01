@@ -80,7 +80,7 @@ export default function Home() {
     <div
       className="min-h-screen text-slate-900"
       style={{
-        background: `radial-gradient(circle at top, rgba(15, 23, 42, 0.08) 0%, #F8FAFC 50%)`,
+        background: `radial-gradient(120% 60% at 50% 0%, rgba(51, 65, 85, 0.12) 0%, rgba(99, 102, 241, 0.04) 45%, #F8FAFC 80%)`,
       }}
     >
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
@@ -138,10 +138,7 @@ export default function Home() {
             <Link href="#roadmap" className="transition hover:text-black">
               Roadmap
             </Link>
-            <Link
-              href="#contact"
-              className="roflex items-center gap-1 text-slate-700 transition hover:text-black"
-            >
+            <Link href="#contact" className="transition hover:text-black">
               Contact
             </Link>
             <a
