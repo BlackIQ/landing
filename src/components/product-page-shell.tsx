@@ -6,48 +6,65 @@ type ProductPageShellProps = {
   children: ReactNode;
 };
 
-const productLinks = [
-  { href: "/products/metrics", label: "Metrics" },
-  { href: "/products/uptime", label: "Uptime" },
-  { href: "/products/analytics", label: "Analytics" },
-];
+type ProductPageShellConfig = {
+  accent: string;
+  productName: string;
+  heroCtaHref: string;
+};
+
+function getShellConfig(accent: string): ProductPageShellConfig {
+  if (accent === "#10B981") {
+    return {
+      accent,
+      productName: "Uptime",
+      heroCtaHref: "#",
+    };
+  }
+
+  if (accent === "#8B5CF6") {
+    return {
+      accent,
+      productName: "Analytics",
+      heroCtaHref: "#",
+    };
+  }
+
+  return {
+    accent,
+    productName: "Metrics",
+    heroCtaHref: "https://metrics.openhubble.com",
+  };
+}
 
 export function ProductPageShell({ accent, children }: ProductPageShellProps) {
+  const config = getShellConfig(accent);
+
   return (
     <div className="min-h-screen bg-[#f8fafc] text-slate-900">
       <header className="sticky top-0 z-10 border-b border-slate-200/80 bg-[#f8fafc]/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full font-semibold text-white" style={{ backgroundColor: accent }}>
+            <div
+              className="flex h-9 w-9 items-center justify-center rounded-full font-semibold text-white"
+              style={{ backgroundColor: accent }}
+            >
               O
             </div>
             <span className="text-lg font-semibold">OpenHubble</span>
           </Link>
-          <nav className="flex flex-wrap items-center gap-3 text-sm text-slate-700">
-            <details className="group relative">
-              <summary className="flex cursor-pointer list-none items-center gap-2 rounded-full border border-slate-300 px-4 py-2 transition hover:border-slate-400 hover:bg-white">
-                Products
-                <span className="text-xs text-slate-500">▾</span>
-              </summary>
-              <div className="absolute right-0 top-full mt-2 min-w-40 rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
-                {productLinks.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block rounded-xl px-3 py-2 text-sm transition hover:bg-slate-50"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </details>
-            <a href="https://github.com/OpenHubble" target="_blank" rel="noreferrer" className="transition hover:text-slate-950">
-              GitHub
-            </a>
-            <Link href="#contact" className="rounded-full border border-slate-300 px-4 py-2 transition hover:border-slate-400 hover:bg-white">
-              Contact
-            </Link>
-          </nav>
+          <a
+            href={config.heroCtaHref}
+            target={
+              config.heroCtaHref.startsWith("http") ? "_blank" : undefined
+            }
+            rel={
+              config.heroCtaHref.startsWith("http") ? "noreferrer" : undefined
+            }
+            className="rounded-full px-4 py-2 font-medium text-white transition hover:opacity-90"
+            style={{ backgroundColor: accent }}
+          >
+            Go to console
+          </a>
         </div>
       </header>
 
@@ -57,20 +74,43 @@ export function ProductPageShell({ accent, children }: ProductPageShellProps) {
         <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-10 lg:flex-row lg:justify-between lg:px-8">
           <div>
             <h4 className="text-lg font-semibold text-slate-900">OpenHubble</h4>
-            <p className="mt-2 text-slate-600">Exploring Data, Unveiling Insights.</p>
+            <p className="mt-2 text-slate-600">
+              Exploring Data, Unveiling Insights.
+            </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-3">
             <div>
               <h5 className="mb-2 font-semibold text-slate-900">Products</h5>
-              <p className="text-sm leading-7 text-slate-600">Metrics<br />Uptime<br />Analytics</p>
+              <p className="text-sm leading-7 text-slate-600">
+                <span className="font-medium" style={{ color: accent }}>
+                  Metrics
+                </span>
+                <br />
+                <span className="font-medium" style={{ color: accent }}>
+                  Uptime
+                </span>
+                <br />
+                <span className="font-medium" style={{ color: accent }}>
+                  Analytics
+                </span>
+              </p>
             </div>
             <div>
               <h5 className="mb-2 font-semibold text-slate-900">Resources</h5>
-              <p className="text-sm leading-7 text-slate-600">GitHub<br />Docs<br />Contact</p>
+              <p className="text-sm leading-7 text-slate-600">
+                GitHub
+                <br />
+                Docs
+                <br />
+                Contact
+              </p>
             </div>
             <div>
               <h5 className="mb-2 font-semibold text-slate-900">Contact</h5>
-              <a href="mailto:info@openhubble.com" className="text-sm text-slate-600 transition hover:text-slate-900">
+              <a
+                href="mailto:info@openhubble.com"
+                className="text-sm text-slate-600 transition hover:text-slate-900"
+              >
                 info@openhubble.com
               </a>
             </div>
@@ -94,7 +134,10 @@ export function ProductSectionHeading({
 }) {
   return (
     <div className="mb-8 max-w-2xl">
-      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em]" style={{ color: accent }}>
+      <p
+        className="mb-3 text-sm font-semibold uppercase tracking-[0.24em]"
+        style={{ color: accent }}
+      >
         {eyebrow}
       </p>
       <h3 className="mb-3 text-3xl font-semibold text-slate-900">{title}</h3>
