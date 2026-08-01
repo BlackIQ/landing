@@ -83,7 +83,6 @@ export default function Home() {
         background: `radial-gradient(circle at top, rgba(15, 23, 42, 0.08) 0%, #F8FAFC 50%)`,
       }}
     >
-      {/* Sticky Header Navbar */}
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
           <Link href="/" className="flex items-center gap-3 group">
@@ -96,7 +95,6 @@ export default function Home() {
           </Link>
 
           <nav className="flex items-center gap-6 text-sm font-semibold text-slate-600">
-            {/* Products Dropdown */}
             <div className="relative group">
               <button className="flex items-center gap-1.5 py-1 text-slate-700 transition hover:text-black">
                 Products
@@ -137,6 +135,15 @@ export default function Home() {
             <Link href="#opensource" className="transition hover:text-black">
               Open Source
             </Link>
+            <Link href="#roadmap" className="transition hover:text-black">
+              Roadmap
+            </Link>
+            <Link
+              href="#contact"
+              className="roflex items-center gap-1 text-slate-700 transition hover:text-black"
+            >
+              Contact
+            </Link>
             <a
               href="https://github.com/OpenHubble"
               target="_blank"
@@ -145,21 +152,11 @@ export default function Home() {
             >
               GitHub ↗
             </a>
-            <Link href="#roadmap" className="transition hover:text-black">
-              Roadmap
-            </Link>
-            <Link
-              href="#contact"
-              className="rounded-full bg-slate-900 px-4 py-2 font-medium text-white transition hover:bg-slate-800"
-            >
-              Contact
-            </Link>
           </nav>
         </div>
       </header>
 
       <main>
-        {/* Hero Section */}
         <section className="mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-8 lg:py-28">
           <div>
             <div className="mb-6 flex flex-wrap gap-2">
@@ -188,7 +185,7 @@ export default function Home() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="#products"
-                className="rounded-full bg-slate-900 px-8 py-3.5 text-center font-semibold text-white shadow-sm transition hover:bg-slate-800"
+                className="inline-flex items-center justify-center rounded-full bg-slate-900 px-8 py-3.5 text-center font-semibold text-white shadow-sm transition hover:bg-slate-800"
               >
                 Get Started
               </Link>
@@ -196,7 +193,7 @@ export default function Home() {
                 href="https://github.com/OpenHubble"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full border border-slate-300 bg-white px-8 py-3.5 text-center font-semibold text-slate-900 transition hover:border-black hover:bg-slate-100"
+                className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-3.5 text-center font-semibold text-slate-900 transition hover:border-black hover:bg-slate-100"
               >
                 GitHub
               </a>
@@ -250,7 +247,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Products Section */}
         <section id="products" className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
           <SectionHeading
             eyebrow="Products"
@@ -284,14 +280,12 @@ export default function Home() {
                   style={{ color: product.accent }}
                 >
                   Learn More
-                  <span aria-hidden="true">↗</span>
                 </Link>
               </article>
             ))}
           </div>
         </section>
 
-        {/* CEO Section */}
         <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
           <div className="rounded-3xl border border-slate-200 bg-white p-8 sm:p-12 shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
@@ -310,9 +304,6 @@ export default function Home() {
                   infrastructure, open-source telemetry, and clean developer
                   tooling.
                 </p>
-                <p className="mt-2 text-xs font-semibold text-slate-400">
-                  OpenHubble since 2024
-                </p>
               </div>
 
               <div className="flex flex-wrap gap-4">
@@ -320,7 +311,7 @@ export default function Home() {
                   href="https://amirhossein.info"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
+                  className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
                 >
                   Website
                 </a>
@@ -328,7 +319,7 @@ export default function Home() {
                   href="https://github.com/BlackIQ"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-black hover:bg-slate-50"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:border-black hover:bg-slate-50"
                 >
                   GitHub @BlackIQ
                 </a>
@@ -337,7 +328,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Why OpenHubble */}
         <section className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
           <SectionHeading
             eyebrow="Why OpenHubble"
@@ -362,7 +352,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Open Source Banner */}
         <section
           id="opensource"
           className="mx-auto max-w-6xl px-6 py-16 lg:px-8"
@@ -385,7 +374,7 @@ export default function Home() {
                 href="https://github.com/OpenHubble"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full bg-white px-8 py-3.5 text-center font-bold text-slate-900 transition hover:bg-slate-200"
+                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-center font-bold text-slate-900 shadow-sm transition hover:bg-slate-200"
               >
                 Explore GitHub
               </a>
@@ -393,7 +382,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Roadmap */}
         <section id="roadmap" className="mx-auto max-w-6xl px-6 py-16 lg:px-8">
           <SectionHeading
             eyebrow="Roadmap"
@@ -423,7 +411,6 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
       <footer id="contact" className="mt-20 border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12 lg:flex-row lg:justify-between lg:px-8">
           <div>
