@@ -23,10 +23,6 @@ body {
   font-family: "Inter", "Segoe UI", Arial, sans-serif;
 }
 
-a {
-  color: inherit;
-}
-
 * {
   box-sizing: border-box;
 }
