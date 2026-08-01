@@ -190,7 +190,7 @@ export function ProductPageShell({ accent, children }: ProductPageShellProps) {
                   rel="noreferrer"
                   className="hover:text-slate-900 transition"
                 >
-                  GitHub
+                  GitHub ↗
                 </a>
               </div>
             </div>
