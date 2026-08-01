@@ -75,9 +75,23 @@ export default function Home() {
             <span className="text-lg font-semibold">OpenHubble</span>
           </Link>
           <nav className="flex flex-wrap items-center gap-4 text-sm text-slate-700">
-            <Link href="#products" className="transition hover:text-slate-950">
-              Products
-            </Link>
+            <details className="group relative">
+              <summary className="flex cursor-pointer list-none items-center gap-2 rounded-full border border-slate-300 px-4 py-2 transition hover:border-slate-400 hover:bg-white">
+                Products
+                <span className="text-xs text-slate-500">▾</span>
+              </summary>
+              <div className="absolute right-0 top-full mt-2 min-w-40 rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_10px_30px_rgba(15,23,42,0.08)]">
+                <Link href="/products/metrics" className="block rounded-xl px-3 py-2 transition hover:bg-slate-50">
+                  Metrics
+                </Link>
+                <Link href="/products/uptime" className="block rounded-xl px-3 py-2 transition hover:bg-slate-50">
+                  Uptime
+                </Link>
+                <Link href="/products/analytics" className="block rounded-xl px-3 py-2 transition hover:bg-slate-50">
+                  Analytics
+                </Link>
+              </div>
+            </details>
             <Link href="#opensource" className="transition hover:text-slate-950">
               Open Source
             </Link>
