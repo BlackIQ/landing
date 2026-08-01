@@ -132,12 +132,12 @@ export default function Home() {
               </div>
             </div>
 
-            <Link href="#opensource" className="transition hover:text-black">
+            {/* <Link href="#opensource" className="transition hover:text-black">
               Open Source
             </Link>
             <Link href="#roadmap" className="transition hover:text-black">
               Roadmap
-            </Link>
+            </Link> */}
             <Link href="#contact" className="transition hover:text-black">
               Contact
             </Link>
